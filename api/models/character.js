@@ -45,9 +45,10 @@ const characterSchema = new Schema({
      --> ALL <-- the inputs you want from the user should be specified here, and the type of data it should be.
      
      mongoDB automatically creates a unique _.id for each object in the DB, so you dont have
-     to worry about addin that in the model. for things like weapons, we will have to create a weapon model and
+     to worry about adding that in the model. for things like weapons, we will have to create a weapon model and
      link it to the character model, so that when we create a new character, we can select a weapon from the weapons
      we have in the DB. we will also have to create a user model, so that when we create a new character, we can link
+     it to a user.
 
      if you have any questions, just ask. 
     
