@@ -16,7 +16,7 @@ const characterSchema = new Schema({
         type: Number,
         required: true 
         /*
-        required: true | will make it so that the user has to input a value when creating a new character
+        required: true | will make it so that the user HAS to input a value when creating a new character
         required: false | will make it optional, if you do this, you should set a default value like an empty string or 0
         otherwise the data will be set to either null or undefined, which will cause errors when trying to 
         display it on the DOM
@@ -39,7 +39,7 @@ const characterSchema = new Schema({
      
      you can change it to the things you want, but when we create a new character, inputs
      for all these fields ( and whatever you choose to add ) will show up on the DOM for the user to input, which will
-     then be sent to the database. we will then Pull this object form the DB by _.id and display its data on the 
+     then be sent to the database. we will then Pull this object from the DB by _.id and display its data on the 
      character sheet page. 
 
      --> ALL <-- the inputs you want from the user should be specified here, and the type of data it should be.
