@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D&D Character Sheet</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item-aa" style="grid-column: 1 / span 1; grid-row: 1 / span 1;">
+            <table>
+                <tr>
+                    <th colspan="6">Character Info</th>
+                </tr>
+                <tr>
+                    <td>Level</td>
+                    <td colspan="2"><input type="number" value="1" class="no-arrows" id="inlevel"></td>
+                    <td colspan="1" class="num" id="ppb">PB: 2</td>
+                </tr>
+                <tr>
+                    <td>Class</td>
+                    <td colspan="4">
+                        <select id="pclass">
+                            <option value="barbarian">Barbarian</option>
+                            <option value="bard">Bard</option>
+                            <option value="cleric">Cleric</option>
+                            <option value="druid">Druid</option>
+                            <option value="fighter">Fighter</option>
+                            <option value="monk">Monk</option>
+                            <option value="paladin">Paladin</option>
+                            <option value="ranger">Ranger</option>
+                            <option value="rogue">Rogue</option>
+                            <option value="sorcerer">Sorcerer</option>
+                            <option value="warlock">Warlock</option>
+                            <option value="wizard">Wizard</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Subclass</td>
+                    <td colspan="4">
+                        <select id="psclass">
+                            <option value="subclass1">Subclass 1</option>
+                            <option value="subclass2">Subclass 2</option>
+                            <option value="subclass3">Subclass 3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Race</td>
+                    <td colspan="4">
+                        <select id="prace">
+                            <option value="human">Human</option>
+                            <option value="elf">Elf</option>
+                            <option value="dwarf">Dwarf</option>
+                            <option value="halfling">Halfling</option>
+                            <option value="gnome">Gnome</option>
+                            <option value="half-orc">Half-Orc</option>
+                            <option value="tiefling">Tiefling</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td colspan="4">
+                        <select id="pbacktround">
+                            <option value="acolyte">Acolyte</option>
+                            <option value="criminal">Criminal</option>
+                            <option value="folk-hero">Folk Hero</option>
+                            <option value="noble">Noble</option>
+                            <option value="sage">Sage</option>
+                            <option value="soldier">Soldier</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1">Inspiration: <input type="checkbox" value="1" class="no-arrows" id="inspirationA"></td>
+                    <td colspan="2">Bardic: <input type="checkbox" value="1" class="no-arrows" id="bardicA"></td>
+                    <td colspan="2">EXP: <input type="number" value="15" class="no-arrows long-input" id="inexp"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-item-ab" style="grid-column: 1 / span 1; grid-row: 2 / span 1;">
+            <table>
+                <tr>
+                    <th colspan="2">Character Description</th>
+                </tr>
+                <tr>
+                    <td>Hair</td>
+                    <td><input type="text" id="inhair"></td>
+                </tr>
+                <tr>
+                    <td>Eyes</td>
+                    <td><input type="text" id="ineyes"></td>
+                </tr>
+                <tr>
+                    <td>Skin</td>
+                    <td><input type="text" id="inskin"></td>
+                </tr>
+                <tr>
+                    <td>Height</td>
+                    <td><input type="text" id="inheight"></td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td><input type="text" id="inweight"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Character Traits -->
+        <div class="grid-item-ac" style="grid-column: 1 / span 1; grid-row: 3 / span 1;">
+            <table>
+                <tr>
+                    <th colspan="2">Character Traits</th>
+                </tr>
+                <tr>
+                    <td>Personality</td>
+                    <td><input type="text" id="inpersonality"></td>
+                </tr>
+                <tr>
+                    <td>Ideals</td>
+                    <td><input type="text" id="inideals"></td>
+                </tr>
+                <tr>
+                    <td>Bonds</td>
+                    <td><input type="text" id="inbonds"></td>
+                </tr>
+                <tr>
+                    <td>Flaws</td>
+                    <td><input type="text" id="inflaws"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="grid-item-ad" style="grid-column: 1 / span 1; grid-row: 4 / span 1;">
+            <table>
+                <tr>
+                    <th colspan="2">Proficiencies</th>
+                </tr>
+                <tr>
+                    <td>Weapons</td>
+                    <td><input type="text" id="inweapons></td>
+                </tr>
+                <tr>
+                    <td>Armor</td>
+                    <td><input type="text" id="inarmor"></td>
+                </tr>
+                <tr>
+                    <td>Tools</td>
+                    <td><input type="text" id="intools"></td>
+                </tr>
+                <tr>
+                    <td>Languages</td>
+                    <td><input type="text" id="inlanguages"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-item-ba" style="grid-column: 2 / span 1; grid-row: 1 / span 1;">
+            <table>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                    <th>Mod</th>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td><input type="number" value="15" class="no-arrows" id="bstr"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Dexterity</td>
+                    <td><input type="number" value="14" class="no-arrows" id="bdex"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Constitution</td>
+                    <td><input type="number" value="13" class="no-arrows" id="bcon"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Intelligence</td>
+                    <td><input type="number" value="12" class="no-arrows" id="bint"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Wisdom</td>
+                    <td><input type="number" value="10" class="no-arrows" id="bwis"></td>
+                    <td class="num">0</td>
+                </tr>
+                <tr>
+                    <td>Charisma</td>
+                    <td><input type="number" value="8" class="no-arrows" id="bcha"></td>
+                    <td class="num">-1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-item-bb" style="grid-column: 2 / span 1; grid-row: 2 / span 1;">
+            <table>
+                <tr>
+                    <th colspan="6">Saving throws</th>    
+                </tr>
+                <tr>
+                    <th>Stat</th>
+                    <th>PF</th>
+                    <th>Mod</th>
+                    <th>Stat</th>
+                    <th>PF</th>
+                    <th>Mod</th>
+                </tr>
+                <tr>
+                    <td>Str</td>
+                    <td><input type="checkbox" class="inum" id="strPF"></td>
+                    <td class="num">2</td>
+                    <td>Dex</td>
+                    <td><input type="checkbox" class="inum" id="dexPF"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Con</td>
+                    <td><input type="checkbox" class="inum" id="conPF"></td>
+                    <td class="num">1</td>
+                    <td>Int</td>
+                    <td><input type="checkbox" class="inum" id="intPF"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Wis</td>
+                    <td><input type="checkbox" class="inum" id="wisPF"></td>
+                    <td class="num">0</td>
+                    <td>Cha</td>
+                    <td><input type="checkbox" class="inum" id="chaPF"></td>
+                    <td class="num">-1</td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-item-bc" style="grid-column: 3 / span 1; grid-row: 1 / span 3;">
+            <table>
+                <tr>
+                    <th colspan="3">Skills</th>
+                </tr>
+                <tr>
+                    <th>Skill</th>
+                    <th>PF</th>
+                    <th>Mod</th>
+                </tr>
+                <tr>
+                    <td>Acrobatics (Dex)</td>
+                    <td><input type="checkbox" class="inum" id="acrobaticsPF"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Animal Handling (Wis)</td>
+                    <td><input type="checkbox" class="inum" id="animalHandlingPF"></td>
+                    <td class="num">0</td>
+                </tr>
+                <tr>
+                    <td>Arcana (Int)</td>
+                    <td><input type="checkbox" class="inum" id="arcanaPF"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Athletics (Str)</td>
+                    <td><input type="checkbox" class="inum" id="athleticsPF"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Deception (Cha)</td>
+                    <td><input type="checkbox" class="inum" id="deceptionPF"></td>
+                    <td class="num">-1</td>
+                </tr>
+                <tr>
+                    <td>History (Int)</td>
+                    <td><input type="checkbox" class="inum" id="historyPF"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Insight (Wis)</td>
+                    <td><input type="checkbox" class="inum" id="insightPF"></td>
+                    <td class="num">0</td>
+                </tr>
+                <tr>
+                    <td>Intimidation (Cha)</td>
+                    <td><input type="checkbox" class="inum" id="intimidationPF"></td>
+                    <td class="num">-1</td>
+                </tr>
+                <tr>
+                    <td>Investigation (Int)</td>
+                    <td><input type="checkbox" class="inum" id="investigationPF"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Medicine (Wis)</td>
+                    <td><input type="checkbox" class="inum" id="medicinePF"></td>
+                    <td class="num">0</td>
+                </tr>
+                <tr>
+                    <td>Nature (Int)</td>
+                    <td><input type="checkbox" class="inum" id="naturePF"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Perception (Wis)</td>
+                    <td><input type="checkbox" class="inum" id="perceptionPF"></td>
+                    <td class="num">0</td>
+                </tr>
+                <tr>
+                    <td>Performance (Cha)</td>
+                    <td><input type="checkbox" class="inum" id="performancePF"></td>
+                    <td class="num">-1</td>
+                </tr>
+                <tr>
+                    <td>Persuasion (Cha)</td>
+                    <td><input type="checkbox" class="inum" id="persuasionPF"></td>
+                    <td class="num">-1</td>
+                </tr>
+                <tr>
+                    <td>Religion (Int)</td>
+                    <td><input type="checkbox" class="inum" id="religionPF"></td>
+                    <td class="num">1</td>
+                </tr>
+                <tr>
+                    <td>Sleight of Hand (Dex)</td>
+                    <td><input type="checkbox" class="inum" id="sleightOfHandPF"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Stealth (Dex)</td>
+                    <td><input type="checkbox" class="inum" id="stealthPF"></td>
+                    <td class="num">2</td>
+                </tr>
+                <tr>
+                    <td>Survival (Wis)</td>
+                    <td><input type="checkbox" class="inum" id="survivalPF"></td>
+                    <td class="num">0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="grid-item-da" style="grid-column: 4 / span 1; grid-row: 1 / span 1;">
+            <table>
+                <tr>
+                    <th>Abilities</th>
+                </tr>
+                <tr>
+                    <th>Racial</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Ability 1" id="raceAB"></td>
+                </tr>
+                <tr>
+                    <th>Class</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Ability 2" id="classAB"></td>
+                </tr>
+                <tr>
+                    <th>Feats</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Ability 3" id="featAB"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+        

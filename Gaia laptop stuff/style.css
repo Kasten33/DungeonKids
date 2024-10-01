@@ -1,0 +1,145 @@
+body {
+  font-family: 'Garamond', serif; /* Classic D&D feel */
+  background-color: #f4e1c1; /* Parchment background */
+  color: #3a2a1b; /* Dark brown text for readability */
+  margin: 0;
+  padding: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Distribute space evenly among columns */
+  grid-template-rows: auto auto auto auto; /* Adjust rows to fit content */
+  justify-content: left;
+  align-content: center;
+  gap: 4px;
+}
+
+.grid-container > div {
+  border: 2px solid #3a2a1b; /* Dark brown border for the grid cells */
+  background-color: #f9f0dc; /* Lighter parchment color for the grid background */
+  padding: 5px; /* Add padding to create a softer look */
+  border-radius: 5px; /* Rounded edges to enhance the scroll look */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.grid-container table {
+  width: 100%; /* Make the table take the full width of the grid item */
+  height: auto; /* Make the table take the full height of the grid item */
+  border-collapse: collapse; /* Ensure borders are collapsed */
+}
+
+.grid-container th, .grid-container td {
+  border: 1px solid #3a2a1b; /* Dark brown borders for table cells */
+  background-color: #f4e1c1; /* Parchment table background */
+  text-align: center; /* Center text in table cells */
+  padding: 4px; /* Add some padding for better readability */
+  font-size: 12px; /* Slightly larger for readability */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  width: auto; /* Set the width of table cells */
+  height: auto; /* Set the height of table cells */
+}
+
+.grid-container tr {
+  height: auto; /* Set the height of table rows */
+}
+
+input[type=number] {
+  width: 20px; /* Make the input smaller */
+  height: 16px; /* Keep it small */
+  text-align: center; /* Center text in table cells */
+  box-sizing: border-box;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  background-color: #f9f0dc; /* Parchment background for inputs */
+  color: #3a2a1b; /* Dark brown text */
+  border: 1px solid #3a2a1b; /* Dark borders */
+  border-radius: 3px; /* Rounded corners */
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* New class for longer number input */
+input[type=number].long-input {
+  width: 100px; /* Adjust width for longer input */
+}
+
+input[type=text] {
+  width: 100%; /* Make the input take full width of the cell */
+  text-align: center; /* Center text in table cells */
+  box-sizing: border-box;
+  padding: 1px; /* Adjust padding */
+  margin: 0; /* Adjust margin */
+  background-color: #f9f0dc; /* Parchment input background */
+  color: #3a2a1b; /* Dark brown text */
+  border: 1px solid #3a2a1b; /* Dark border for input */
+  border-radius: 3px; /* Rounded corners */
+}
+
+.num {
+  text-align: center; /* Center the text */
+  font-size: 30px; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+  color: #3a2a1b; /* Dark brown text for bold numbers */
+}
+
+td.num {
+  font-size: inherit; /* Inherit the font size from the parent */
+}
+
+select {
+  width: 100%; /* Make the select take full width of the cell */
+  height: 100%;
+  background-color: #f9f0dc; /* Parchment background */
+  color: #3a2a1b; /* Dark text */
+  border: 1px solid #3a2a1b; /* Dark border */
+  text-align: center; /* Center text in select */
+  box-sizing: border-box;
+  padding: 0px; /* Adjust padding */
+  margin: 1px; /* Adjust margin */
+  border-radius: 3px; /* Rounded corners */
+}
+
+input[type=checkbox] {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f0dc; /* Parchment background */
+  color: #3a2a1b; /* Dark text */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textbox {
+  width: 100px; /* Make the text box take full width of the cell */
+  text-align: center; /* Center text in table cells */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+  padding: 1px; /* Adjust padding */
+  margin: 0; /* Adjust margin */
+  background-color: #f9f0dc; /* Parchment background */
+  color: #3a2a1b; /* Dark text */
+  border: 1px solid #3a2a1b; /* Dark border */
+  border-radius: 3px; /* Rounded corners */
+}
+
+.align-center input[type="checkbox"] {
+  margin-left: 5px; /* Optional: to add some space between text and checkbox */
+  transform: scale(1.1); /* Increase the size of the checkbox */
+  vertical-align: middle;
+}
