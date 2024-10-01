@@ -16,7 +16,7 @@
                 <tr>
                     <td>Level</td>
                     <td colspan="2"><input type="number" value="1" class="no-arrows" id="inlevel"></td>
-                    <td colspan="1" class="num" id="ppb">PB: 2</td>
+                    <td colspan="2">PB: <span id="ppb">2</span></td>
                 </tr>
                 <tr>
                     <td>Class</td>
@@ -141,7 +141,7 @@
                 </tr>
                 <tr>
                     <td>Weapons</td>
-                    <td><input type="text" id="inweapons></td>
+                    <td><input type="text" id="inweapons"></td>
                 </tr>
                 <tr>
                     <td>Armor</td>
@@ -166,33 +166,33 @@
                 </tr>
                 <tr>
                     <td>Strength</td>
-                    <td><input type="number" value="15" class="no-arrows" id="bstr"></td>
-                    <td class="num">2</td>
+                    <td><input type="number" id="bstr" value="10"></td>
+                    <td id="strMod">+0</td>
                 </tr>
                 <tr>
                     <td>Dexterity</td>
-                    <td><input type="number" value="14" class="no-arrows" id="bdex"></td>
-                    <td class="num">2</td>
+                    <td><input type="number" id="bdex" value="10"></td>
+                    <td id="dexMod">+0</td>
                 </tr>
                 <tr>
                     <td>Constitution</td>
-                    <td><input type="number" value="13" class="no-arrows" id="bcon"></td>
-                    <td class="num">1</td>
+                    <td><input type="number" id="bcon" value="10"></td>
+                    <td id="conMod">+0</td>
                 </tr>
                 <tr>
                     <td>Intelligence</td>
-                    <td><input type="number" value="12" class="no-arrows" id="bint"></td>
-                    <td class="num">1</td>
+                    <td><input type="number" id="bint" value="10"></td>
+                    <td id="intMod">+0</td>
                 </tr>
                 <tr>
                     <td>Wisdom</td>
-                    <td><input type="number" value="10" class="no-arrows" id="bwis"></td>
-                    <td class="num">0</td>
+                    <td><input type="number" id="bwis" value="10"></td>
+                    <td id="wisMod">+0</td>
                 </tr>
                 <tr>
                     <td>Charisma</td>
-                    <td><input type="number" value="8" class="no-arrows" id="bcha"></td>
-                    <td class="num">-1</td>
+                    <td><input type="number" id="bcha" value="10"></td>
+                    <td id="chaMod">+0</td>
                 </tr>
             </table>
         </div>
@@ -212,131 +212,150 @@
                 <tr>
                     <td>Str</td>
                     <td><input type="checkbox" class="inum" id="strPF"></td>
-                    <td class="num">2</td>
+                    <td id="strSF">+0</td>
                     <td>Dex</td>
                     <td><input type="checkbox" class="inum" id="dexPF"></td>
-                    <td class="num">2</td>
+                    <td id="dexSF">+0</td>
                 </tr>
                 <tr>
                     <td>Con</td>
                     <td><input type="checkbox" class="inum" id="conPF"></td>
-                    <td class="num">1</td>
+                    <td id="conSF">+0</td>
                     <td>Int</td>
                     <td><input type="checkbox" class="inum" id="intPF"></td>
-                    <td class="num">1</td>
+                    <td id="intSF">+0</td>
                 </tr>
                 <tr>
                     <td>Wis</td>
                     <td><input type="checkbox" class="inum" id="wisPF"></td>
-                    <td class="num">0</td>
+                    <td id="wisSF">+0</td>
                     <td>Cha</td>
                     <td><input type="checkbox" class="inum" id="chaPF"></td>
-                    <td class="num">-1</td>
+                    <td id="chaSF">+0</td>
                 </tr>
             </table>
         </div>
         <div class="grid-item-bc" style="grid-column: 3 / span 1; grid-row: 1 / span 3;">
             <table>
                 <tr>
-                    <th colspan="3">Skills</th>
+                    <th colspan="4">Skills</th>
                 </tr>
                 <tr>
                     <th>Skill</th>
+                    <th>EX</th>
                     <th>PF</th>
                     <th>Mod</th>
                 </tr>
                 <tr>
-                    <td>Acrobatics (Dex)</td>
-                    <td><input type="checkbox" class="inum" id="acrobaticsPF"></td>
-                    <td class="num">2</td>
+                    <td>Acrobatics</td>
+                    <td><input type="checkbox" id="acroEX"></td>
+                    <td><input type="checkbox" id="acroPF"></td>
+                    <td id="acroMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Animal Handling (Wis)</td>
-                    <td><input type="checkbox" class="inum" id="animalHandlingPF"></td>
-                    <td class="num">0</td>
+                    <td>Animal Handling</td>
+                    <td><input type="checkbox" id="animaEX"></td>
+                    <td><input type="checkbox" id="animaPF"></td>
+                    <td id="animMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Arcana (Int)</td>
-                    <td><input type="checkbox" class="inum" id="arcanaPF"></td>
-                    <td class="num">1</td>
+                    <td>Arcana</td>
+                    <td><input type="checkbox" id="arcaEX"></td>
+                    <td><input type="checkbox" id="arcaPF"></td>
+                    <td id="arcaMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Athletics (Str)</td>
-                    <td><input type="checkbox" class="inum" id="athleticsPF"></td>
-                    <td class="num">2</td>
+                    <td>Athletics</td>
+                    <td><input type="checkbox" id="athlEX"></td>
+                    <td><input type="checkbox" id="athlPF"></td>
+                    <td id="athlMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Deception (Cha)</td>
-                    <td><input type="checkbox" class="inum" id="deceptionPF"></td>
-                    <td class="num">-1</td>
+                    <td>Deception</td>
+                    <td><input type="checkbox" id="deceEX"></td>
+                    <td><input type="checkbox" id="decePF"></td>
+                    <td id="deceMod">+0</td>
                 </tr>
                 <tr>
-                    <td>History (Int)</td>
-                    <td><input type="checkbox" class="inum" id="historyPF"></td>
-                    <td class="num">1</td>
+                    <td>History</td>
+                    <td><input type="checkbox" id="histEX"></td>
+                    <td><input type="checkbox" id="histPF"></td>
+                    <td id="histMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Insight (Wis)</td>
-                    <td><input type="checkbox" class="inum" id="insightPF"></td>
-                    <td class="num">0</td>
+                    <td>Insight</td>
+                    <td><input type="checkbox" id="insiEX"></td>
+                    <td><input type="checkbox" id="insiPF"></td>
+                    <td id="insiMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Intimidation (Cha)</td>
-                    <td><input type="checkbox" class="inum" id="intimidationPF"></td>
-                    <td class="num">-1</td>
+                    <td>Intimidation</td>
+                    <td><input type="checkbox" id="intiEX"></td>
+                    <td><input type="checkbox" id="intiPF"></td>
+                    <td id="intiMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Investigation (Int)</td>
-                    <td><input type="checkbox" class="inum" id="investigationPF"></td>
-                    <td class="num">1</td>
+                    <td>Investigation</td>
+                    <td><input type="checkbox" id="inveEX"></td>
+                    <td><input type="checkbox" id="invePF"></td>
+                    <td id="inveMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Medicine (Wis)</td>
-                    <td><input type="checkbox" class="inum" id="medicinePF"></td>
-                    <td class="num">0</td>
+                    <td>Medicine</td>
+                    <td><input type="checkbox" id="mediEX"></td>
+                    <td><input type="checkbox" id="mediPF"></td>
+                    <td id="mediMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Nature (Int)</td>
-                    <td><input type="checkbox" class="inum" id="naturePF"></td>
-                    <td class="num">1</td>
+                    <td>Nature</td>
+                    <td><input type="checkbox" id="natuEX"></td>
+                    <td><input type="checkbox" id="natuPF"></td>
+                    <td id="natuMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Perception (Wis)</td>
-                    <td><input type="checkbox" class="inum" id="perceptionPF"></td>
-                    <td class="num">0</td>
+                    <td>Perception</td>
+                    <td><input type="checkbox" id="percEX"></td>
+                    <td><input type="checkbox" id="percPF"></td>
+                    <td id="percMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Performance (Cha)</td>
-                    <td><input type="checkbox" class="inum" id="performancePF"></td>
-                    <td class="num">-1</td>
+                    <td>Performance</td>
+                    <td><input type="checkbox" id="perfEX"></td>
+                    <td><input type="checkbox" id="perfPF"></td>
+                    <td id="perfMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Persuasion (Cha)</td>
-                    <td><input type="checkbox" class="inum" id="persuasionPF"></td>
-                    <td class="num">-1</td>
+                    <td>Persuasion</td>
+                    <td><input type="checkbox" id="persEX"></td>
+                    <td><input type="checkbox" id="persPF"></td>
+                    <td id="persMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Religion (Int)</td>
-                    <td><input type="checkbox" class="inum" id="religionPF"></td>
-                    <td class="num">1</td>
+                    <td>Religion</td>
+                    <td><input type="checkbox" id="reliEX"></td>
+                    <td><input type="checkbox" id="reliPF"></td>
+                    <td id="reliMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Sleight of Hand (Dex)</td>
-                    <td><input type="checkbox" class="inum" id="sleightOfHandPF"></td>
-                    <td class="num">2</td>
+                    <td>Sleight of Hand</td>
+                    <td><input type="checkbox" id="sleiEX"></td>
+                    <td><input type="checkbox" id="sleiPF"></td>
+                    <td id="sleiMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Stealth (Dex)</td>
-                    <td><input type="checkbox" class="inum" id="stealthPF"></td>
-                    <td class="num">2</td>
+                    <td>Stealth</td>
+                    <td><input type="checkbox" id="stealEX"></td>
+                    <td><input type="checkbox" id="stealPF"></td>
+                    <td id="stealMod">+0</td>
                 </tr>
                 <tr>
-                    <td>Survival (Wis)</td>
-                    <td><input type="checkbox" class="inum" id="survivalPF"></td>
-                    <td class="num">0</td>
+                    <td>Survival</td>
+                    <td><input type="checkbox" id="survEX"></td>
+                    <td><input type="checkbox" id="survPF"></td>
+                    <td id="survMod">+0</td>
                 </tr>
             </table>
-        </div>
+        </div>        
         <div class="grid-item-da" style="grid-column: 4 / span 1; grid-row: 1 / span 1;">
             <table>
                 <tr>
