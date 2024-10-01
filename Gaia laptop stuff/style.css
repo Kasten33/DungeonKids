@@ -8,8 +8,8 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr; /* Distribute space evenly among columns */
-  grid-template-rows: auto auto auto auto; /* Adjust rows to fit content */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Distribute space evenly among columns */
+  grid-template-rows: auto auto auto auto auto; /* Adjust rows to fit content */
   justify-content: left;
   align-content: center;
   gap: 4px;
@@ -35,12 +35,12 @@ body {
 .grid-container th, .grid-container td {
   border: 1px solid #3a2a1b; /* Dark brown borders for table cells */
   background-color: #f4e1c1; /* Parchment table background */
-  text-align: center; /* Center text in table cells */
+  text-align: left; /* Align text to the left for better readability */
   padding: 4px; /* Add some padding for better readability */
   font-size: 12px; /* Slightly larger for readability */
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflow text */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  white-space: normal; /* Allow text to wrap to the next line */
+  overflow: visible; /* Allow overflow to be visible */
+  text-overflow: clip; /* Remove ellipsis for overflow text */
   width: auto; /* Set the width of table cells */
   height: auto; /* Set the height of table cells */
 }
@@ -142,4 +142,28 @@ input[type=checkbox] {
   margin-left: 5px; /* Optional: to add some space between text and checkbox */
   transform: scale(1.1); /* Increase the size of the checkbox */
   vertical-align: middle;
+}
+
+.proficiency-container {
+  display: flex;
+  flex-direction: column; /* Stack input and list vertically */
+}
+
+.input-box {
+  width: 100%; /* Adjust the width as needed */
+}
+
+.item-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Use flexbox for horizontal stacking */
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+}
+
+.item-list li {
+  cursor: pointer; /* Change cursor to pointer for list items */
+  background: #f0f0f0; /* Light background color */
+  padding: 5px; /* Spacing for list items */
+  margin: 2px; /* Spacing between items */
 }
