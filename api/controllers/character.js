@@ -1,7 +1,9 @@
 const mongodb = require("../DB/connect");
 const { ObjectId } = require("mongodb")
 
-const getCharacter = async (req, res) => {};
+const getCharacter = async (req, res) => {
+    
+};
 
 
 const getCharacters = async (req, res) => {};
