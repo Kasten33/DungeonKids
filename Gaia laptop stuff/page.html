@@ -51,12 +51,14 @@
                     <td>Race</td>
                     <td colspan="4">
                         <select id="prace">
-                            <option value="human">Human</option>
-                            <option value="elf">Elf</option>
+                            <option value="dragonborn">Dragonborn</option>
                             <option value="dwarf">Dwarf</option>
-                            <option value="halfling">Halfling</option>
+                            <option value="elf">Elf</option>
                             <option value="gnome">Gnome</option>
+                            <option value="half-elf">Half-Elf</option>
+                            <option value="halfling">Halfling</option>
                             <option value="half-orc">Half-Orc</option>
+                            <option value="human">Human</option>
                             <option value="tiefling">Tiefling</option>
                         </select>
                     </td>
@@ -64,13 +66,20 @@
                 <tr>
                     <td>Background</td>
                     <td colspan="4">
-                        <select id="pbacktround">
+                        <select id="pbackground">
                             <option value="acolyte">Acolyte</option>
+                            <option value="charlatan">Charlatan</option>
                             <option value="criminal">Criminal</option>
+                            <option value="entertainer">Entertainer</option>
                             <option value="folk-hero">Folk Hero</option>
+                            <option value="guild-artisan">Guild Artisan</option>
+                            <option value="hermit">Hermit</option>
                             <option value="noble">Noble</option>
+                            <option value="outlander">Outlander</option>
                             <option value="sage">Sage</option>
+                            <option value="sailor">Sailor</option>
                             <option value="soldier">Soldier</option>
+                            <option value="urchin">Urchin</option>
                         </select>
                     </td>
                 </tr>
@@ -108,52 +117,46 @@
                 </tr>
             </table>
         </div>
-
-        <!-- Character Traits -->
         <div class="grid-item-ac" style="grid-column: 1 / span 1; grid-row: 3 / span 1;">
             <table>
                 <tr>
-                    <th colspan="2">Character Traits</th>
-                </tr>
-                <tr>
-                    <td>Personality</td>
-                    <td><input type="text" id="inpersonality"></td>
-                </tr>
-                <tr>
-                    <td>Ideals</td>
-                    <td><input type="text" id="inideals"></td>
-                </tr>
-                <tr>
-                    <td>Bonds</td>
-                    <td><input type="text" id="inbonds"></td>
-                </tr>
-                <tr>
-                    <td>Flaws</td>
-                    <td><input type="text" id="inflaws"></td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="grid-item-ad" style="grid-column: 1 / span 1; grid-row: 4 / span 1;">
-            <table>
-                <tr>
-                    <th colspan="2">Proficiencies</th>
+                    <th colspan="2">Proficiency</th>
                 </tr>
                 <tr>
                     <td>Weapons</td>
-                    <td><input type="text" id="inweapons"></td>
+                    <td>
+                        <div class="proficiency-container">
+                            <input type="text" id="inweapon" class="input-box" placeholder="Add weapon proficiency">
+                            <ul id="weaponList" class="item-list"></ul>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Armor</td>
-                    <td><input type="text" id="inarmor"></td>
+                    <td>
+                        <div class="proficiency-container">
+                            <input type="text" id="inarmor" class="input-box" placeholder="Add armor proficiency">
+                            <ul id="armorList" class="item-list"></ul>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Tools</td>
-                    <td><input type="text" id="intools"></td>
+                    <td>
+                        <div class="proficiency-container">
+                            <input type="text" id="intool" class="input-box" placeholder="Add tool proficiency">
+                            <ul id="toolList" class="item-list"></ul>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>Languages</td>
-                    <td><input type="text" id="inlanguages"></td>
+                    <td>
+                        <div class="proficiency-container">
+                            <input type="text" id="inlanguage" class="input-box" placeholder="Add language proficiency">
+                            <ul id="languageList" class="item-list"></ul>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -235,7 +238,7 @@
                 </tr>
             </table>
         </div>
-        <div class="grid-item-bc" style="grid-column: 3 / span 1; grid-row: 1 / span 3;">
+        <div class="grid-item-bc" style="grid-column: 3 / span 1; grid-row: 1 / span 8;">
             <table>
                 <tr>
                     <th colspan="4">Skills</th>
@@ -356,7 +359,7 @@
                 </tr>
             </table>
         </div>        
-        <div class="grid-item-da" style="grid-column: 4 / span 1; grid-row: 1 / span 1;">
+        <div class="grid-item-da" style="grid-column: 4 / span 1; grid-row: 1 / span 8;">
             <table>
                 <tr>
                     <th>Abilities</th>
@@ -364,20 +367,32 @@
                 <tr>
                     <th>Racial</th>
                 </tr>
-                <tr>
-                    <td><input type="text" placeholder="Ability 1" id="raceAB"></td>
+                    <td>
+                        <div id="raceABContainer">
+                            <span id="raceAB">Ability 1</span> <!-- Default placeholder -->
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <th>Class</th>
                 </tr>
                 <tr>
-                    <td><input type="text" placeholder="Ability 2" id="classAB"></td>
+                    <td><span id="classAB">Ability 2</span></td>
                 </tr>
                 <tr>
                     <th>Feats</th>
                 </tr>
                 <tr>
-                    <td><input type="text" placeholder="Ability 3" id="featAB"></td>
+                    <td><span id="featAB">Ability 3</span></td>
+                </tr>
+                <tr>
+                    <th>Background</th>
+                </tr>
+                    <td>
+                        <div id="backgroundABContainer">
+                            <span id="backgroundAB">Background 1</span> <!-- Default placeholder -->
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -385,4 +400,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-        
