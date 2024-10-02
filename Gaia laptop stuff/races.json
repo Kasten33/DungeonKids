@@ -18,7 +18,33 @@
                     "title": "Languages",
                     "description": "You can speak, read, and write Common and Draconic."
                 }
-            ]
+            ],
+            "subraces": {
+                "red": {
+                    "abilities": [
+                        {
+                            "title": "fire",
+                            "description": "Dragon"
+                        },
+                        {
+                            "title": "Resistance",
+                            "description": "You have resistance to radiant damage."
+                        }
+                    ]
+                },
+                "mephistopheles": {
+                    "abilities": [
+                        {
+                            "title": "Infernal Charm",
+                            "description": "You gain proficiency in the Persuasion skill."
+                        },
+                        {
+                            "title": "Fiery Resistance",
+                            "description": "You have resistance to fire damage."
+                        }
+                    ]
+                }
+            }
         },
         "dwarf": {
             "abilities": [
@@ -175,8 +201,8 @@
         "tiefling": {
             "abilities": [
                 {
-                    "title": "Darkvision",
-                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                "title": "Darkvision",
+                "description": "You can see in dim light within 60 feet of you as if it were bright light."
                 },
                 {
                     "title": "Hellish Resistance",
@@ -190,7 +216,33 @@
                     "title": "Languages",
                     "description": "You can speak, read, and write Common and Infernal."
                 }
-            ]
+            ],
+            "subraces": {
+                "asmodian": {
+                    "abilities": [
+                        {
+                            "title": "Asmodian Magic",
+                            "description": "You can cast one of the following spells: charm person or disguise self."
+                        },
+                        {
+                            "title": "Searing Resistance",
+                            "description": "You have resistance to radiant damage."
+                        }
+                    ]
+                },
+                "mephistopheles": {
+                    "abilities": [
+                        {
+                            "title": "Infernal Charm",
+                            "description": "You gain proficiency in the Persuasion skill."
+                        },
+                        {
+                            "title": "Fiery Resistance",
+                            "description": "You have resistance to fire damage."
+                        }
+                    ]
+                }
+            }
         }
     }
 }
