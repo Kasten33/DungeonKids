@@ -22,6 +22,12 @@
             "proficiencies": [
                 "insiPF",
                 "reliPF"
+            ],
+            "tools": [
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "charlatan": {
@@ -46,6 +52,14 @@
             "proficiencies": [
                 "decePF",
                 "sleiPF"
+            ],
+            "tools": [
+                "Disguise kit",
+                "Forgery kit"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "criminal": {
@@ -70,7 +84,16 @@
             "proficiencies": [
                 "decePF",
                 "steaPF"
+            ],
+            "tools": [
+                "Gaming Set",
+                "Thieves' Tools"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
+
         },
         "entertainer": {
             "abilities": [
@@ -94,9 +117,17 @@
             "proficiencies": [
                 "acroPF",
                 "perfPF"
+            ],
+            "tools": [
+                "Disquise Kit",
+                "Musical Instrument"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
-        "folk_hero": {
+        "folk-hero": {
             "abilities": [
                 {
                     "title": "Skill Proficiencies",
@@ -118,9 +149,17 @@
             "proficiencies": [
                 "animPF",
                 "survPF"
+            ],
+            "tools": [
+                "Artisans Tools",
+                "Land Vehicles"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
-        "guild_artisan": {
+        "guild-artisan": {
             "abilities": [
                 {
                     "title": "Skill Proficiencies",
@@ -146,6 +185,13 @@
             "proficiencies": [
                 "insiPF",
                 "persPF"
+            ],
+            "tools": [
+                "Artisans tools"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "hermit": {
@@ -174,6 +220,13 @@
             "proficiencies": [
                 "mediPF",
                 "reliPF"
+            ],
+            "tools": [
+                "Herbalism Kit"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "noble": {
@@ -202,6 +255,13 @@
             "proficiencies": [
                 "histPF",
                 "persPF"
+            ],
+            "tools": [
+                "Gaming Set"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "outlander": {
@@ -230,6 +290,13 @@
             "proficiencies": [
                 "athlPF",
                 "survPF"
+            ],
+            "tools": [
+                "Musical instrument"
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "sage": {
@@ -254,6 +321,12 @@
             "proficiencies": [
                 "arcaPF",
                 "histPF"
+            ],
+            "tools": [
+            ],
+            "Language": [
+                "Common",
+                "Language2"
             ]
         },
         "sailor": {
@@ -268,64 +341,24 @@
                 },
                 {
                     "title": "Equipment",
-                    "description": "A belaying pin (club), 50 feet of silk rope, a lucky charm, a set of common clothes, and a pouch containing 10 gp"
+                    "description": "A belaying pin (club), 50 feet of silk rope, a lucky charm such as a rabbit foot or a small stone with a hole in the center, a set of common clothes, and a pouch containing 10 gp"
                 },
                 {
                     "title": "Feature: Ship's Passage",
-                    "description": "When you need to, you can secure free passage on a sailing ship for yourself and your companions."
+                    "description": "When you need to, you can secure free passage on a ship for you and your adventuring companions."
                 }
             ],
             "proficiencies": [
                 "athlPF",
                 "percPF"
-            ]
-        },
-        "soldier": {
-            "abilities": [
-                {
-                    "title": "Skill Proficiencies",
-                    "description": "Athletics, Intimidation"
-                },
-                {
-                    "title": "Tool Proficiencies",
-                    "description": "One type of gaming set, vehicles (land)"
-                },
-                {
-                    "title": "Equipment",
-                    "description": "An insignia of rank, a trophy taken from a fallen enemy, a set of bone dice or deck of cards, a set of common clothes, and a pouch containing 10 gp"
-                },
-                {
-                    "title": "Feature: Military Rank",
-                    "description": "You have a military rank from your career as a soldier. Soldiers loyal to your former military organization still recognize your authority and influence."
-                }
             ],
-            "proficiencies": [
-                "athlPF",
-                "intiPF"
-            ]
-        },
-        "urchin": {
-            "abilities": [
-                {
-                    "title": "Skill Proficiencies",
-                    "description": "Sleight of Hand, Stealth"
-                },
-                {
-                    "title": "Tool Proficiencies",
-                    "description": "Disguise kit, thieves' tools"
-                },
-                {
-                    "title": "Equipment",
-                    "description": "A small knife, a map of the city you grew up in, a pet mouse, a token to remember your parents by, a set of common clothes, and a pouch containing 10 gp"
-                },
-                {
-                    "title": "Feature: City Secrets",
-                    "description": "You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss."
-                }
+            "tools": [
+                "navigators tools",
+                "Water Vehicle"
             ],
-            "proficiencies": [
-                "sleiPF",
-                "steaPF"
+            "Language": [
+                "Common",
+                "Language2"
             ]
         }
     }
