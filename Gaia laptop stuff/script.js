@@ -100,7 +100,6 @@ function updateSkills() {
     });
 }
 
-
 function updateRacialAbilities() {
     const selectedRace = document.getElementById('prace').value;
     const raceABContainer = document.getElementById('raceABContainer');
@@ -113,16 +112,19 @@ function updateRacialAbilities() {
         raceABContainer.appendChild(abilityItem);
     });
 }
-
 function updateBackgroundAbilities() {
     const selectedBackground = document.getElementById('pbackground').value;
     const backgroundABContainer = document.getElementById('backgroundABContainer');
     backgroundABContainer.innerHTML = '';
 
-    const backgroundData = backgroundAbilitiesData[selectedBackground];
+    // Access background data using bracket notation
+    const backgroundData = backgroundAbilitiesData[selectedBackground] || backgroundAbilitiesData[selectedBackground.replace(/ /g, '')];
     const abilities = backgroundData?.abilities || [];
     const proficiencies = backgroundData?.proficiencies || [];
+    const tools = backgroundData?.tools || [];  // Get tools from the background data
+    const languages = backgroundData?.Language || [];  // Access languages from the background data
 
+    // Display abilities
     abilities.forEach(ability => {
         const abilityItem = document.createElement('p');
         abilityItem.innerHTML = `<strong>${ability.title}</strong>: ${ability.description}`;
@@ -131,16 +133,48 @@ function updateBackgroundAbilities() {
 
     // Reset all proficiencies
     document.querySelectorAll('[id$="PF"]').forEach(checkbox => checkbox.checked = false);
-
+    
     // Set proficiencies from background
     proficiencies.forEach(pfId => {
         const checkbox = document.getElementById(pfId);
         if (checkbox) checkbox.checked = true;
     });
 
+    // Clear the existing tool list
+    const toolList = document.getElementById('toolList');
+    toolList.innerHTML = ''; // Clear previous tool entries
+
+    // Add tools to the tool list
+    tools.forEach(tool => {
+        const listItem = document.createElement('li');
+        listItem.textContent = tool; // Add the tool name to the list
+        // Allow removal of items by clicking
+        listItem.addEventListener('click', function () {
+            toolList.removeChild(listItem);
+        });
+        toolList.appendChild(listItem);
+    });
+
+    // Clear the existing language list
+    const languageList = document.getElementById('languageList');
+    languageList.innerHTML = ''; // Clear previous language entries
+
+    // Add existing languages from the background
+    languages.forEach(language => {
+        const listItem = document.createElement('li');
+        listItem.textContent = language; // Add the language name to the list
+        // Allow removal of items by clicking
+        listItem.addEventListener('click', function () {
+            languageList.removeChild(listItem);
+        });
+        languageList.appendChild(listItem);
+    });
+
     updateSavingThrows();
     updateSkills();
 }
+
+
 
 // Event listeners
 levelInput.addEventListener('input', updateModifiersAndBonus);
@@ -176,15 +210,21 @@ function addItem(inputId, listId) {
     const input = document.getElementById(inputId);
     const list = document.getElementById(listId);
 
+    // Ensure input and list elements exist
+    if (!input || !list) return;
+
     input.addEventListener('keypress', function (event) {
         if (event.key === 'Enter' && input.value.trim() !== '') {
             const listItem = document.createElement('li');
             listItem.textContent = input.value.trim();
+            
+            // Allow removal of items by clicking
             listItem.addEventListener('click', function () {
                 list.removeChild(listItem);
             });
+
             list.appendChild(listItem);
-            input.value = ''; // Clear the input field
+            input.value = ''; // Clear input after adding
         }
     });
 }
@@ -195,12 +235,127 @@ addItem('inarmor', 'armorList');
 addItem('intool', 'toolList');
 addItem('inlanguage', 'languageList');
 
-
-
-
-
 // Initialize
 updateModifiersAndBonus();
 updateRacialAbilities();
 updateBackgroundAbilities();
 updateSkills();  // Ensure skills are updated on initial load
+
+function checkLastRow(input) {
+    const equipmentTableBody = document.getElementById('equipmentTableBody');
+    const rows = equipmentTableBody.getElementsByTagName('tr');
+    const lastRow = rows[rows.length - 1]; // Get the last row
+
+    // Check if the last input field is filled
+    const lastInput = lastRow.querySelector('input');
+    if (lastInput && lastInput.value.trim() !== '') {
+        addEquipmentRow(); // Add a new row if the last input is filled
+    }
+}
+
+function addEquipmentRow() {
+    const equipmentTableBody = document.getElementById('equipmentTableBody');
+    
+    // Create a new row
+    const newRow = document.createElement('tr');
+    
+    // Create a cell with input for equipment and the remove button
+    const equipmentCell = document.createElement('td');
+    
+    // Create remove button
+    const removeButton = document.createElement('button');
+    removeButton.className = 'remove-button';
+    removeButton.innerHTML = '×';
+    removeButton.onclick = function() { removeEquipmentRow(removeButton); };
+    
+    // Create equipment input
+    const equipmentInput = document.createElement('input');
+    equipmentInput.type = 'text';
+    equipmentInput.className = 'input-box';
+    equipmentInput.placeholder = 'Add equipment';
+    equipmentInput.oninput = function() { checkLastRow(equipmentInput); }; // Check this input too
+
+    // Append button and input to the cell
+    const inputContainer = document.createElement('div');
+    inputContainer.className = 'input-container';
+    inputContainer.appendChild(removeButton);
+    inputContainer.appendChild(equipmentInput);
+    
+    // Append the container to the cell
+    equipmentCell.appendChild(inputContainer);
+    
+    // Append the cell to the new row
+    newRow.appendChild(equipmentCell);
+    
+    // Append the new row to the table body
+    equipmentTableBody.appendChild(newRow);
+    
+    // Enable the remove button for the new row
+    if (equipmentTableBody.children.length > 1) {
+        equipmentTableBody.children[1].querySelector('.remove-button').disabled = false;
+    }
+}
+
+function removeEquipmentRow(button) {
+    const row = button.closest('tr'); // Get the row of the button
+    const equipmentTableBody = document.getElementById('equipmentTableBody');
+    
+    // Ensure that we don't remove the first item
+    if (row !== equipmentTableBody.firstElementChild) {
+        row.parentElement.removeChild(row); // Remove the row if it's not the first
+    }
+}
+
+function showSubraceOptions() {
+    const raceSelect = document.getElementById("prace");
+    const subraceRow = document.getElementById("subraceRow");
+    const subraceSelect = document.getElementById("psubrace");
+
+    // Clear previous options
+    subraceSelect.innerHTML = "";
+
+    // Show the subrace row
+    subraceRow.style.display = "table-row";
+
+    const selectedRace = raceSelect.value;
+
+    // Check if the selected race has subraces
+    if (races[selectedRace]?.subraces) {
+        // Populate subrace options
+        for (const subrace in races[selectedRace].subraces) {
+            const option = document.createElement("option");
+            option.value = subrace;
+            option.textContent = subrace.charAt(0).toUpperCase() + subrace.slice(1);
+            subraceSelect.appendChild(option);
+        }
+    } else {
+        subraceRow.style.display = "none"; // Hide if no subraces available
+    }
+}
+
+function showSubclassOptions() {
+    const classSelect = document.getElementById("pclass");
+    const subclassRow = document.getElementById("subclassRow");
+    const subclassSelect = document.getElementById("psubclass");
+
+    // Clear previous options
+    subclassSelect.innerHTML = "";
+
+    // Show the subclass row
+    subclassRow.style.display = "table-row";
+
+    const selectedClass = classSelect.value;
+
+    // Check if the selected class has subclasses
+    if (classes[selectedClass]?.subclasses) {
+        // Populate subclass options
+        for (const subclass in classes[selectedClass].subclasses) {
+            const option = document.createElement("option");
+            option.value = subclass;
+            option.textContent = subclass.charAt(0).toUpperCase() + subclass.slice(1);
+            subclassSelect.appendChild(option);
+        }
+    } else {
+        subclassRow.style.display = "none"; // Hide if no subclasses available
+    }
+}
