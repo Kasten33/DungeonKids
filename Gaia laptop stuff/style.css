@@ -167,3 +167,26 @@ input[type=checkbox] {
   padding: 5px; /* Spacing for list items */
   margin: 2px; /* Spacing between items */
 }
+
+.input-container {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space between button and input */
+}
+
+.remove-button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  color: red; /* Red color for the button */
+  font-size: 16px; /* Size of the 'X' */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-right: 5px; /* Space between button and input */
+}
+
+.input-box {
+  flex: 1; /* Allow input to take available space */
+  margin-left: 5px; /* Space between button and input */
+  padding: 5px; /* Add some padding for the input */
+  box-sizing: border-box; /* Include padding in total width */
+  width: calc(100% - 30px); /* Adjust width to fit in container */
+}
