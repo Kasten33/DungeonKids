@@ -1,4 +1,3 @@
-// Get the input element and proficiency bonus display element
 const levelInput = document.getElementById('inlevel');
 const ppb = document.getElementById('ppb');
 
@@ -22,6 +21,7 @@ fetch('backgrounds.json')
         updateBackgroundAbilities();
     })
     .catch(error => console.error('Error loading background abilities:', error));
+
 
 function calculateProficiencyBonus(level) {
     return Math.floor((level - 1) / 4) + 2;
@@ -174,38 +174,6 @@ function updateBackgroundAbilities() {
     updateSkills();
 }
 
-
-
-// Event listeners
-levelInput.addEventListener('input', updateModifiersAndBonus);
-document.getElementById('prace').addEventListener('change', () => {
-    updateRacialAbilities();
-    updateSkills();  // Update skills when race changes
-});
-document.getElementById('pbackground').addEventListener('change', () => {
-    updateBackgroundAbilities();
-    updateSkills();  // Update skills when background changes
-});
-
-// Add event listeners for ability score inputs
-['str', 'dex', 'con', 'int', 'wis', 'cha'].forEach(attr => {
-    document.getElementById(`b${attr}`).addEventListener('input', updateModifiersAndBonus);
-});
-
-// Add event listeners for proficiency checkboxes
-document.querySelectorAll('[id$="PF"]').forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        updateSavingThrows();
-        updateSkills();
-    });
-});
-
-// Add event listeners for expertise checkboxes
-document.querySelectorAll('[id$="EX"]').forEach(checkbox => {
-    checkbox.addEventListener('change', updateSkills);
-});
-
-// Function to handle adding items to the list
 function addItem(inputId, listId) {
     const input = document.getElementById(inputId);
     const list = document.getElementById(listId);
@@ -229,18 +197,6 @@ function addItem(inputId, listId) {
     });
 }
 
-// Initialize event listeners for each input field
-addItem('inweapon', 'weaponList');
-addItem('inarmor', 'armorList');
-addItem('intool', 'toolList');
-addItem('inlanguage', 'languageList');
-
-// Initialize
-updateModifiersAndBonus();
-updateRacialAbilities();
-updateBackgroundAbilities();
-updateSkills();  // Ensure skills are updated on initial load
-
 function checkLastRow(input) {
     const equipmentTableBody = document.getElementById('equipmentTableBody');
     const rows = equipmentTableBody.getElementsByTagName('tr');
@@ -252,6 +208,7 @@ function checkLastRow(input) {
         addEquipmentRow(); // Add a new row if the last input is filled
     }
 }
+
 
 function addEquipmentRow() {
     const equipmentTableBody = document.getElementById('equipmentTableBody');
@@ -306,56 +263,47 @@ function removeEquipmentRow(button) {
     }
 }
 
-function showSubraceOptions() {
-    const raceSelect = document.getElementById("prace");
-    const subraceRow = document.getElementById("subraceRow");
-    const subraceSelect = document.getElementById("psubrace");
 
-    // Clear previous options
-    subraceSelect.innerHTML = "";
 
-    // Show the subrace row
-    subraceRow.style.display = "table-row";
+// Event listeners
+levelInput.addEventListener('input', updateModifiersAndBonus);
+document.getElementById('prace').addEventListener('change', () => {
+    updateRacialAbilities();
+    updateSkills();  // Update skills when race changes
+});
+document.getElementById('pbackground').addEventListener('change', () => {
+    updateBackgroundAbilities();
+    updateSkills();  // Update skills when background changes
+});
 
-    const selectedRace = raceSelect.value;
+// Add event listeners for ability score inputs
+['str', 'dex', 'con', 'int', 'wis', 'cha'].forEach(attr => {
+    document.getElementById(`b${attr}`).addEventListener('input', updateModifiersAndBonus);
+});
 
-    // Check if the selected race has subraces
-    if (races[selectedRace]?.subraces) {
-        // Populate subrace options
-        for (const subrace in races[selectedRace].subraces) {
-            const option = document.createElement("option");
-            option.value = subrace;
-            option.textContent = subrace.charAt(0).toUpperCase() + subrace.slice(1);
-            subraceSelect.appendChild(option);
-        }
-    } else {
-        subraceRow.style.display = "none"; // Hide if no subraces available
-    }
-}
+// Add event listeners for proficiency checkboxes
+document.querySelectorAll('[id$="PF"]').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        updateSavingThrows();
+        updateSkills();
+    });
+});
 
-function showSubclassOptions() {
-    const classSelect = document.getElementById("pclass");
-    const subclassRow = document.getElementById("subclassRow");
-    const subclassSelect = document.getElementById("psubclass");
+// Add event listeners for expertise checkboxes
+document.querySelectorAll('[id$="EX"]').forEach(checkbox => {
+    checkbox.addEventListener('change', updateSkills);
+});
 
-    // Clear previous options
-    subclassSelect.innerHTML = "";
 
-    // Show the subclass row
-    subclassRow.style.display = "table-row";
+addItem('inweapon', 'weaponList');
+addItem('inarmor', 'armorList');
+addItem('intool', 'toolList');
+addItem('inlanguage', 'languageList');
 
-    const selectedClass = classSelect.value;
+// Initialize
+updateModifiersAndBonus();
+updateRacialAbilities();
+updateBackgroundAbilities();
+updateSkills(); 
 
-    // Check if the selected class has subclasses
-    if (classes[selectedClass]?.subclasses) {
-        // Populate subclass options
-        for (const subclass in classes[selectedClass].subclasses) {
-            const option = document.createElement("option");
-            option.value = subclass;
-            option.textContent = subclass.charAt(0).toUpperCase() + subclass.slice(1);
-            subclassSelect.appendChild(option);
-        }
-    } else {
-        subclassRow.style.display = "none"; // Hide if no subclasses available
-    }
-}
+
