@@ -1,0 +1,1 @@
+//how the character sheet is displayed

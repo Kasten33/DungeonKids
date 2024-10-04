@@ -1,0 +1,196 @@
+{
+    "races": {
+        "dragonborn": {
+            "abilities": [
+                {
+                    "title": "Draconic Ancestry",
+                    "description": "Choose one type of dragon. Your breath weapon and damage resistance are determined by the dragon type."
+                },
+                {
+                    "title": "Breath Weapon",
+                    "description": "You can use your action to exhale destructive energy matching your draconic ancestry."
+                },
+                {
+                    "title": "Damage Resistance",
+                    "description": "You have resistance to the damage type associated with your draconic ancestry."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Draconic."
+                }
+            ]
+        },
+        "dwarf": {
+            "abilities": [
+                {
+                    "title": "Darkvision",
+                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                },
+                {
+                    "title": "Dwarven Resilience",
+                    "description": "You have advantage on saving throws against poison, and resistance against poison damage."
+                },
+                {
+                    "title": "Dwarven Combat Training",
+                    "description": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+                },
+                {
+                    "title": "Tool Proficiency",
+                    "description": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools."
+                },
+                {
+                    "title": "Stonecunning",
+                    "description": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient and add double your proficiency bonus."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Dwarvish."
+                }
+            ]
+        },
+        "elf": {
+            "abilities": [
+                {
+                    "title": "Darkvision",
+                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                },
+                {
+                    "title": "Keen Senses",
+                    "description": "You have proficiency in the Perception skill."
+                },
+                {
+                    "title": "Fey Ancestry",
+                    "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+                },
+                {
+                    "title": "Trance",
+                    "description": "Elves don't need to sleep. Instead, they meditate deeply for 4 hours a day."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Elvish."
+                }
+            ]
+        },
+        "gnome": {
+            "abilities": [
+                {
+                    "title": "Darkvision",
+                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                },
+                {
+                    "title": "Gnome Cunning",
+                    "description": "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+                },
+                {
+                    "title": "Small",
+                    "description": "Your size is Small."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Gnomish."
+                }
+            ]
+        },
+        "half-elf": {
+            "abilities": [
+                {
+                    "title": "Darkvision",
+                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                },
+                {
+                    "title": "Fey Ancestry",
+                    "description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+                },
+                {
+                    "title": "Skill Versatility",
+                    "description": "You gain proficiency in two skills of your choice."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common, Elvish, and one extra language of your choice."
+                }
+            ]
+        },
+        "halfling": {
+            "abilities": [
+                {
+                    "title": "Lucky",
+                    "description": "When you roll a 1 on an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+                },
+                {
+                    "title": "Brave",
+                    "description": "You have advantage on saving throws against being frightened."
+                },
+                {
+                    "title": "Halfling Nimbleness",
+                    "description": "You can move through the space of any creature that is of a size larger than yours."
+                },
+                {
+                    "title": "Small",
+                    "description": "Your size is Small."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Halfling."
+                }
+            ]
+        },
+        "half-orc": {
+            "abilities": [
+                {
+                    "title": "Darkvision",
+                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                },
+                {
+                    "title": "Menacing",
+                    "description": "You gain proficiency in the Intimidation skill."
+                },
+                {
+                    "title": "Relentless Endurance",
+                    "description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead once per long rest."
+                },
+                {
+                    "title": "Savage Attacks",
+                    "description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Orc."
+                }
+            ]
+        },
+        "human": {
+            "abilities": [
+                {
+                    "title": "Extra Language",
+                    "description": "You can speak, read, and write one extra language of your choice."
+                },
+                {
+                    "title": "Ability Score Increase",
+                    "description": "All ability scores increase by 1."
+                }
+            ]
+        },
+        "tiefling": {
+            "abilities": [
+                {
+                    "title": "Darkvision",
+                    "description": "You can see in dim light within 60 feet of you as if it were bright light."
+                },
+                {
+                    "title": "Hellish Resistance",
+                    "description": "You have resistance to fire damage."
+                },
+                {
+                    "title": "Infernal Legacy",
+                    "description": "You know the thaumaturgy cantrip. At 3rd level, you can cast hellish rebuke once per day. At 5th level, you can also cast darkness once per day."
+                },
+                {
+                    "title": "Languages",
+                    "description": "You can speak, read, and write Common and Infernal."
+                }
+            ]
+        }
+    }
+}
