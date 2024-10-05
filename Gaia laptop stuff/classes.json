@@ -1,0 +1,80 @@
+{
+    "classes": {
+        "fighter": {
+            "abilities": [
+                {
+                    "title": "Second Wind",
+                    "description": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level."
+                },
+                {
+                    "title": "Action Surge",
+                    "description": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action."
+                }
+            ],
+            "subclasses": {
+                "champion": {
+                    "abilities": [
+                        {
+                            "title": "Improved Critical",
+                            "description": "Your weapon attacks score a critical hit on a roll of 19 or 20."
+                        },
+                        {
+                            "title": "Remarkable Athlete",
+                            "description": "Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn’t already use your proficiency bonus."
+                        }
+                    ]
+                },
+                "battleMaster": {
+                    "abilities": [
+                        {
+                            "title": "Combat Superiority",
+                            "description": "You learn maneuvers that are fueled by special dice called superiority dice."
+                        },
+                        {
+                            "title": "Student of War",
+                            "description": "You gain proficiency with one type of artisan's tools of your choice."
+                        }
+                    ]
+                }
+            }
+        },
+        "wizard": {
+            "abilities": [
+                {
+                    "title": "Arcane Recovery",
+                    "description": "Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up)."
+                },
+                {
+                    "title": "Spellcasting",
+                    "description": "You have learned to cast spells from the wizard spell list."
+                }
+            ],
+            "subclasses": {
+                "evocation": {
+                    "abilities": [
+                        {
+                            "title": "Sculpt Spells",
+                            "description": "When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws."
+                        },
+                        {
+                            "title": "Potent Cantrip",
+                            "description": "Starting at 6th level, your damaging cantrips affect even creatures that succeed on saving throws. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect."
+                        }
+                    ]
+                },
+                "necromancy": {
+                    "abilities": [
+                        {
+                            "title": "Grim Harvest",
+                            "description": "Once per turn when you kill one or more creatures with a spell of 1st level or higher, you regain hit points equal to twice the spell’s level, or three times its level if the spell belongs to the necromancy school."
+                        },
+                        {
+                            "title": "Undead Thralls",
+                            "description": "At 6th level, you add the animate dead spell to your spellbook. When you cast it, you can target one additional corpse or pile of bones, creating an extra undead servant."
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
