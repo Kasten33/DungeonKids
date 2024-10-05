@@ -1,189 +1,298 @@
 body {
-  font-family: 'Garamond', serif; /* Classic D&D feel */
-  background-color: #f4e1c1; /* Parchment background */
-  color: #3a2a1b; /* Dark brown text for readability */
-  margin: 0;
-  padding: 20px;
+    font-family: 'Garamond', serif;
+    background-color: #f4e1c1;
+    color: #3a2a1b;
+    margin: 0;
+    padding: 20px;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Distribute space evenly among columns */
-  grid-template-rows: auto auto auto auto auto; /* Adjust rows to fit content */
-  justify-content: left;
-  align-content: center;
-  gap: 4px;
+.container {
+    display: grid;
+    grid-template-rows: 1fr auto; /* Add a second row */
+    grid-auto-columns: min-content min-content min-content min-content min-content; /* Keep equal columns */
+    grid-gap: 10px;
+    max-width: 100vw;
+    height: 90vh;
+    grid-template-areas: 
+        "mc1 mc2 mc3 mc4 mc5"
+        "footer footer footer footer footer"; /* Define the new row spanning all columns */
+    margin: 0 auto;
 }
 
-.grid-container > div {
-  border: 2px solid #3a2a1b; /* Dark brown border for the grid cells */
-  background-color: #f9f0dc; /* Lighter parchment color for the grid background */
-  padding: 5px; /* Add padding to create a softer look */
-  border-radius: 5px; /* Rounded edges to enhance the scroll look */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+/* Style for the footer area */
+.footer {
+    grid-area: footer; /* Ensure the new row spans all columns */
+    background-color: lightgray; /* Example styling */
 }
 
-.grid-container table {
-  width: 100%; /* Make the table take the full width of the grid item */
-  height: auto; /* Make the table take the full height of the grid item */
-  border-collapse: collapse; /* Ensure borders are collapsed */
+.subcontainer-c1 {
+    grid-area: mc1; 
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content; /* Four equally spaced rows */
+    grid-template-columns: max-content; /* Two equally spaced columns */
+    grid-gap: 10px;
+    width: 100%; /* Fit the width of the parent grid */
+    height: 100%; /* Fill the available height */
+    grid-template-areas: 
+        "r1c1"
+        "r2c1"
+        "r3c1"
+        "r4c1";
+    margin: 0 auto;
+}
+.subcontainer-c2 {
+    grid-area: mc2; 
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content; /* Four equally spaced rows */
+    grid-template-columns: auto; /* Two equally spaced columns */
+    grid-gap: 10px;
+    width: 100%; /* Fit the width of the parent grid */
+    height: 100%; /* Fill the available height */
+    grid-template-areas: 
+        "r1c2"
+        "r2c2"
+        "r3c2"
+        "r4c2";
+    margin: 0 auto;
+}
+.subcontainer-c3 {
+    grid-area: mc3; 
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content; /* Four equally spaced rows */
+    grid-template-columns: auto; /* Two equally spaced columns */
+    grid-gap: 0px;
+    width: 100%; /* Fit the width of the parent grid */
+    height: 100%; /* Fill the available height */
+    grid-template-areas: 
+        "r1c3"
+        "r2c3"
+        "r3c3"
+        "r4c3";
+    margin: 0 auto;
+}
+.subcontainer-c4 {
+    grid-area: mc4; 
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content; /* Four equally spaced rows */
+    grid-template-columns: auto; /* Two equally spaced columns */
+    grid-gap: 0px;
+    width: 100%; /* Fit the width of the parent grid */
+    height: 100%; /* Fill the available height */
+    grid-template-areas: 
+        "r1c4"
+        "r2c4"
+        "r3c4"
+        "r4c4";
+    margin: 0 auto;
+}
+.subcontainer-c5 {
+    grid-area: mc5; 
+    display: grid;
+    grid-template-rows: min-content min-content min-content min-content; /* Four equally spaced rows */
+    grid-template-columns: auto; /* Two equally spaced columns */
+    grid-gap: 0px;
+    width: 100%; /* Fit the width of the parent grid */
+    height: 100%; /* Fill the available height */
+    grid-template-areas: 
+        "r1c5"
+        "r2c5"
+        "r3c5"
+        "r4c5";
+    margin: 0 auto;
 }
 
-.grid-container th, .grid-container td {
-  border: 1px solid #3a2a1b; /* Dark brown borders for table cells */
-  background-color: #f4e1c1; /* Parchment table background */
-  text-align: left; /* Align text to the left for better readability */
-  padding: 4px; /* Add some padding for better readability */
-  font-size: 12px; /* Slightly larger for readability */
-  white-space: normal; /* Allow text to wrap to the next line */
-  overflow: visible; /* Allow overflow to be visible */
-  text-overflow: clip; /* Remove ellipsis for overflow text */
-  width: auto; /* Set the width of table cells */
-  height: auto; /* Set the height of table cells */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 100%; /* Make the table take the full height of the box */
 }
 
-.grid-container tr {
-  height: auto; /* Set the height of table rows */
+th, td {
+    border: 1px solid #3a2a1b;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
 }
 
-input[type=number] {
-  width: 20px; /* Make the input smaller */
-  height: 16px; /* Keep it small */
-  text-align: center; /* Center text in table cells */
-  box-sizing: border-box;
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  background-color: #f9f0dc; /* Parchment background for inputs */
-  color: #3a2a1b; /* Dark brown text */
-  border: 1px solid #3a2a1b; /* Dark borders */
-  border-radius: 3px; /* Rounded corners */
+th {
+    background-color: #e6d2ae;
+    font-weight: bold;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input[type="text"], input[type="number"], select {
+    width: 98%;
+    padding: 3px;
+    border: 1px solid #3a2a1b;
+    border-radius: 4px;
+    background-color: #f9f0dc;
+    color: #3a2a1b;
 }
 
-/* New class for longer number input */
-input[type=number].long-input {
-  width: 100px; /* Adjust width for longer input */
+input[type="number"] {
+    width: 70%; /* Ensure consistent width */
+    text-align: center;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
-input[type=text] {
-  width: 100%; /* Make the input take full width of the cell */
-  text-align: center; /* Center text in table cells */
-  box-sizing: border-box;
-  padding: 1px; /* Adjust padding */
-  margin: 0; /* Adjust margin */
-  background-color: #f9f0dc; /* Parchment input background */
-  color: #3a2a1b; /* Dark brown text */
-  border: 1px solid #3a2a1b; /* Dark border for input */
-  border-radius: 3px; /* Rounded corners */
+/* Remove up/down arrows in number inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.num {
-  text-align: center; /* Center the text */
-  font-size: 30px; /* Increase the font size */
-  font-weight: bold; /* Make the text bold */
-  color: #3a2a1b; /* Dark brown text for bold numbers */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
 }
 
-td.num {
-  font-size: inherit; /* Inherit the font size from the parent */
+input[type="checkbox"] {
+    margin: 0;
 }
 
-select {
-  width: 100%; /* Make the select take full width of the cell */
-  height: 100%;
-  background-color: #f9f0dc; /* Parchment background */
-  color: #3a2a1b; /* Dark text */
-  border: 1px solid #3a2a1b; /* Dark border */
-  text-align: center; /* Center text in select */
-  box-sizing: border-box;
-  padding: 0px; /* Adjust padding */
-  margin: 1px; /* Adjust margin */
-  border-radius: 3px; /* Rounded corners */
+input.weaponbox {
+    width: 100px; /* Adjust width as needed */
+    padding: 3px;
+    border: 1px solid #3a2a1b;
+    border-radius: 4px;
+    background-color: #f9f0dc;
+    color: #3a2a1b;
 }
 
-input[type=checkbox] {
-  width: 100%;
-  height: 100%;
-  background-color: #f9f0dc; /* Parchment background */
-  color: #3a2a1b; /* Dark text */
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.box {
+    border: 1px solid #3a2a1b;
+    background: #f9f0dc;
+    box-sizing: border-box; /* Ensure padding is included in the element's total height/width */
+    padding: 0;
+    justify-content: center;
+    width: 100%; /* Ensure boxes take full width of column */
 }
 
-.textbox {
-  width: 100px; /* Make the text box take full width of the cell */
-  text-align: center; /* Center text in table cells */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-  padding: 1px; /* Adjust padding */
-  margin: 0; /* Adjust margin */
-  background-color: #f9f0dc; /* Parchment background */
-  color: #3a2a1b; /* Dark text */
-  border: 1px solid #3a2a1b; /* Dark border */
-  border-radius: 3px; /* Rounded corners */
+
+.r1c1 .r2c1 .r3c1 .r4c1 .r1c2 .r2c2 .r3c2 .r4c2 .r1c3 .r2c3 .r3c3 .r4c3 .r1c4, .r2c4, .r3c4, .r4c4, .r1c5, .r2c5, .r3c5, .r4c5   { 
+    height: min-content; /* Height for the first item in the first row */
+    width: auto;
+}
+.r1c1{
+    grid-area: r1c1;
+    height: min-content;
+    width: auto;
+}
+.r2c1{
+    grid-area: r2c1;
+    height: min-content;
+    width: auto;
+}
+.r3c1{
+    grid-area: r3c1;
+    height: min-content;
+    width: auto;
+}
+.r4c1{
+    grid-area: r4c1;
+    height: min-content;
+    width: auto;
 }
 
-.align-center input[type="checkbox"] {
-  margin-left: 5px; /* Optional: to add some space between text and checkbox */
-  transform: scale(1.1); /* Increase the size of the checkbox */
-  vertical-align: middle;
+.r1c2{
+    grid-area: r1c2;
+    height: 5%;
+    width: auto;
+}
+.r2c2{
+    grid-area: r2c2;
+    height: fit-content;
+    width: auto;
+}
+.r3c2{
+    grid-area: r3c2;
+    height: min-content;
+    width: auto;
+}
+.r4c2{
+    grid-area: r4c2;
+    height: min-content;
+    width: auto;
 }
 
-.proficiency-container {
-  display: flex;
-  flex-direction: column; /* Stack input and list vertically */
+
+
+
+
+.r1c3{
+    grid-area: r1c3;
+    height: min-content;
+    width: auto;
+}
+.r2c3{
+    grid-area: r2c3;
+    height: min-content;
+    width: auto;
+}
+.r3c3{
+    grid-area: r3c3;
+    height: min-content;
+    width: auto;
+}
+.r4c3{
+    grid-area: r4c3;
+    height: min-content;
+    width: auto;
 }
 
-.input-box {
-  width: 100%; /* Adjust the width as needed */
+
+.r1c4 {
+    grid-area: r1c4;
+    height: min-content;
+    width: auto;
 }
 
-.item-list {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  display: flex; /* Use flexbox for horizontal stacking */
-  flex-wrap: wrap; /* Allow wrapping to the next line */
+.r2c4 {
+    grid-area: r2c4;
+    height: min-content;
+    width: auto;
 }
 
-.item-list li {
-  cursor: pointer; /* Change cursor to pointer for list items */
-  background: #f0f0f0; /* Light background color */
-  padding: 5px; /* Spacing for list items */
-  margin: 2px; /* Spacing between items */
+.r3c4 {
+    grid-area: r3c4;
+    height: min-content;
+    width: auto;
 }
 
-.input-container {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Center vertically */
-  justify-content: space-between; /* Space between button and input */
+.r4c4 {
+    grid-area: r4c4;
+    height: min-content;
+    width: auto;
 }
 
-.remove-button {
-  background-color: transparent; /* Transparent background */
-  border: none; /* No border */
-  color: red; /* Red color for the button */
-  font-size: 16px; /* Size of the 'X' */
-  cursor: pointer; /* Pointer cursor on hover */
-  margin-right: 5px; /* Space between button and input */
+.r1c5 {
+    grid-area: r1c5;
+    height: min-content;
+    width: max-content;
 }
 
-.input-box {
-  flex: 1; /* Allow input to take available space */
-  margin-left: 5px; /* Space between button and input */
-  padding: 5px; /* Add some padding for the input */
-  box-sizing: border-box; /* Include padding in total width */
-  width: calc(100% - 30px); /* Adjust width to fit in container */
+.r2c5 {
+    grid-area: r2c5;
+    height: min-content;
+    width: auto;
 }
 
+.r3c5 {
+    grid-area: r3c5;
+    height: min-content;
+    width: auto;
+}
+
+.r4c5 {
+    grid-area: r4c5;
+    height: min-content;
+    width: auto;
+}
+
+.checkbox-container {
+    justify-content:center;/* Distribute checkboxes evenly */
+    align-items: center; /* Ensure checkboxes are vertically centered */
+    width: 100%; /* Ensure the container takes the full width of the cell */
+    padding: 5px; /* Optional: Add padding for better spacing */
+}
