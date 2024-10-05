@@ -1,14 +1,27 @@
 const mongodb = require("../DB/connect");
 const { ObjectId } = require("mongodb")
 
-const getWeapon = async (req, res) => {};
+const getWeapon = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Weapons")
+        .findOne({ _id: ObjectId(id) });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
 const getWeapons = async (req, res) => {
     try{
         const result = await mongodb
         .getDb()
-        .collection("weapons")
+        .db()
+        .collection("Weapons")
         .find()  
         res.status(200).json(result);
     } catch (error) {
@@ -17,15 +30,50 @@ const getWeapons = async (req, res) => {
 };
 
 
-const createWeapon = async (req, res) => {};
+const createWeapon = async (req, res) => {
+    try{
+        const weapon = req.body;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Weapons")
+        .insertOne(weapon);
+        res.status(201).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const updateWeapon = async (req, res) => {};
+const updateWeapon = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const weapon = req.body;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Weapons")
+        .updateOne({ _id: ObjectId(id) }, { $set: weapon });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
+const deleteWeapon = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Weapons")
+        .deleteOne({ _id: ObjectId(id) });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
-const deleteWeapon = async (req, res) => {};
-
-//will add logic later
 
 module.exports = {
     getWeapon,

@@ -1,8 +1,19 @@
 const mongodb = require("../DB/connect");
 const { ObjectId } = require("mongodb")
 
-const getUser = async (req, res) => {};
-
+const getUser = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Users")
+        .findOne({ _id: ObjectId(id) });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 const getUsers = async (req, res) => {};
 

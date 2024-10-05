@@ -11,8 +11,8 @@ const {
 
 router.get('/', getSpells);
 router.get('/:id', getSpell);
-router.post('/', createSpell);
-router.put('/:id', updateSpell);
+router.post('/add', createSpell);
+router.patch('/:id', updateSpell);
 router.delete('/:id', deleteSpell);
 
 module.exports = router;

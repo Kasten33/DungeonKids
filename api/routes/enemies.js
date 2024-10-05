@@ -11,8 +11,8 @@ const {
 
 router.get('/', getEnemies);
 router.get('/:id', getEnemy);
-router.post('/', createEnemy);
-router.put('/:id', updateEnemy);
+router.post('/add', createEnemy);
+router.patch('/:id', updateEnemy);
 router.delete('/:id', deleteEnemy);
 
 module.exports = router;

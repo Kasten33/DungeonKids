@@ -11,8 +11,8 @@ const {
 
 router.get('/', getWeapons);
 router.get('/:id', getWeapon);
-router.post('/', createWeapon);
-router.put('/:id', updateWeapon);
+router.post('/add', createWeapon);
+router.patch('/:id', updateWeapon);
 router.delete('/:id', deleteWeapon);
 
 module.exports = router;

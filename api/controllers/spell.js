@@ -1,19 +1,79 @@
 const mongodb = require("../DB/connect");
 const { ObjectId } = require("mongodb")
 
-const getSpell = async (req, res) => {};
+const getSpell = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Spells")
+        .findOne({ _id: ObjectId(id) });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const getSpells = async (req, res) => {};
+const getSpells = async (req, res) => {
+    try{
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Spells")
+        .find()  
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const createSpell = async (req, res) => {};
+const createSpell = async (req, res) => {
+    try{
+        const spell = req.body;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Spells")
+        .insertOne(spell);
+        res.status(201).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const updateSpell = async (req, res) => {};
+const updateSpell = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const spell = req.body;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Spells")
+        .updateOne({ _id: ObjectId(id) }, { $set: spell });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const deleteSpell = async (req, res) => {};
+const deleteSpell = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const result = await mongodb
+        .getDb()
+        .db()
+        .collection("Spells")
+        .deleteOne({ _id: ObjectId(id) });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 //will add logic later
 
