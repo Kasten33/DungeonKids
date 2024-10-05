@@ -6,7 +6,7 @@ const getUser = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Users")
         .findOne({ _id: ObjectId(id) });
         res.status(200).json(result);
@@ -15,16 +15,64 @@ const getUser = async (req, res) => {
     }
 };
 
-const getUsers = async (req, res) => {};
+const getUsers = async (req, res) => {
+    try{
+        const result = await mongodb
+        .getDb()
+        .db("objects")
+        .collection("Users")
+        .find()  
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const createUser = async (req, res) => {};
+const createUser = async (req, res) => {
+    try{
+        const user = req.body;
+        const result = await mongodb
+        .getDb()
+        .db("objects")
+        .collection("Users")
+        .insertOne(user);
+        res.status(201).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const updateUser = async (req, res) => {};
+const updateUser = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const user = req.body;
+        const result = await mongodb
+        .getDb()
+        .db("objects")
+        .collection("Users")
+        .updateOne({ _id: ObjectId(id) }, { $set: user });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 
-const deleteUser = async (req, res) => {};
+const deleteUser = async (req, res) => {
+    try{
+        const { id } = req.params;
+        const result = await mongodb
+        .getDb()
+        .db("objects")
+        .collection("Users")
+        .deleteOne({ _id: ObjectId(id) });
+        res.status(200).json(result);
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 //will add logic later
 

@@ -7,7 +7,7 @@ const getEnemy = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Enemies")
         .findOne({ _id: ObjectId(id) });
         res.status(200).json(result);
@@ -21,7 +21,7 @@ const getEnemies = async (req, res) => {
     try{
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Enemies")
         .find()  
         res.status(200).json(result);
@@ -36,7 +36,7 @@ const createEnemy = async (req, res) => {
         const enemy = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Enemies")
         .insertOne(enemy);
         res.status(201).json(result);
@@ -52,7 +52,7 @@ const updateEnemy = async (req, res) => {
         const enemy = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Enemies")
         .updateOne({ _id: ObjectId(id) }, { $set: enemy });
         res.status(200).json(result);
@@ -67,7 +67,7 @@ const deleteEnemy = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Enemies")
         .deleteOne({ _id: ObjectId(id) });
         res.status(200).json(result);

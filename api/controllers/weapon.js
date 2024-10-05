@@ -6,7 +6,7 @@ const getWeapon = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Weapons")
         .findOne({ _id: ObjectId(id) });
         res.status(200).json(result);
@@ -20,7 +20,7 @@ const getWeapons = async (req, res) => {
     try{
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Weapons")
         .find()  
         res.status(200).json(result);
@@ -35,7 +35,7 @@ const createWeapon = async (req, res) => {
         const weapon = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Weapons")
         .insertOne(weapon);
         res.status(201).json(result);
@@ -51,7 +51,7 @@ const updateWeapon = async (req, res) => {
         const weapon = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Weapons")
         .updateOne({ _id: ObjectId(id) }, { $set: weapon });
         res.status(200).json(result);
@@ -65,7 +65,7 @@ const deleteWeapon = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Weapons")
         .deleteOne({ _id: ObjectId(id) });
         res.status(200).json(result);

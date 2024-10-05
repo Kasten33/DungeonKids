@@ -6,7 +6,7 @@ const getSpell = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Spells")
         .findOne({ _id: ObjectId(id) });
         res.status(200).json(result);
@@ -20,7 +20,7 @@ const getSpells = async (req, res) => {
     try{
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Spells")
         .find()  
         res.status(200).json(result);
@@ -35,7 +35,7 @@ const createSpell = async (req, res) => {
         const spell = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Spells")
         .insertOne(spell);
         res.status(201).json(result);
@@ -51,7 +51,7 @@ const updateSpell = async (req, res) => {
         const spell = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Spells")
         .updateOne({ _id: ObjectId(id) }, { $set: spell });
         res.status(200).json(result);
@@ -66,7 +66,7 @@ const deleteSpell = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Spells")
         .deleteOne({ _id: ObjectId(id) });
         res.status(200).json(result);

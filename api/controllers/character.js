@@ -6,7 +6,7 @@ const getCharacter = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Characters")
         .findOne({ _id: ObjectId(id) });
         res.status(200).json(result);
@@ -19,7 +19,7 @@ const getCharacters = async (req, res) => {
     try{
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Characters")
         .find()  
         res.status(200).json(result);
@@ -34,7 +34,7 @@ const createCharacter = async (req, res) => {
         const character = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Characters")
         .insertOne(character);
         res.status(201).json(result);
@@ -50,7 +50,7 @@ const updateCharacter = async (req, res) => {
         const character = req.body;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Characters")
         .updateOne({ _id: ObjectId(id) }, { $set: character });
         res.status(200).json(result);
@@ -65,7 +65,7 @@ const deleteCharacter = async (req, res) => {
         const { id } = req.params;
         const result = await mongodb
         .getDb()
-        .db()
+        .db("objects")
         .collection("Characters")
         .deleteOne({ _id: ObjectId(id) });
         res.status(200).json(result);
