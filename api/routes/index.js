@@ -7,6 +7,7 @@ router.use("/spells", require("./spells"));
 router.use("/enemies", require("./enemies"));
 router.use("/weapons", require("./weapons"));
 router.use("/character", require("./character"));
+router.use("/campaign", require("./campaign"));
 
 
 module.exports = router;
