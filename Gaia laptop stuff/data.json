@@ -1,1 +1,130 @@
-{"levelInput":"20","classSelect":"bard","subclassSelect":"subclass1","raceSelect":"human","backgroundSelect":"acolyte","inspirationCheckbox":false,"bardicCheckbox":false,"expInput":"15","hairInput":"","eyesInput":"","skinInput":"","heightInput":"","weightInput":"","personalityInput":"","idealsInput":"","bondsInput":"","flawsInput":"","weaponsInput":"","armorInput":"","toolsInput":"","languagesInput":"","strInput":"16","dexInput":"14","conInput":"13","intInput":"12","wisInput":"10","chaInput":"8","strSaveCheckbox":false,"dexSaveCheckbox":false,"conSaveCheckbox":false,"intSaveCheckbox":false,"wisSaveCheckbox":false,"chaSaveCheckbox":false,"acrobaticsCheckbox":false,"animalHandlingCheckbox":false,"arcanaCheckbox":false,"athleticsCheckbox":false,"deceptionCheckbox":false,"historyCheckbox":false,"insightCheckbox":false,"intimidationCheckbox":false,"investigationCheckbox":false,"medicineCheckbox":false,"natureCheckbox":false,"perceptionCheckbox":false,"performanceCheckbox":false,"persuasionCheckbox":false,"religionCheckbox":false,"sleightOfHandCheckbox":false,"stealthCheckbox":false,"survivalCheckbox":false,"racialAbilityInput":"","classAbilityInput":"","featsAbilityInput":""}
+{
+  "level": 11,
+  "ProficiencyBonus": 4,
+  "class": "Rogue",
+  "subclass": "",
+  "race": "Dwarf",
+  "subrace": "",
+  "background": "Acolyte",
+  "stats": {
+    "str": 14,
+    "dex": 14,
+    "con": 12,
+    "int": 12,
+    "wis": 12,
+    "cha": 12
+  },
+  "modifiers": {
+    "str": 2,
+    "dex": 2,
+    "con": 1,
+    "int": 1,
+    "wis": 1,
+    "cha": 1
+  },
+  "savingThrows": {
+    "str": false,
+    "dex": false,
+    "con": false,
+    "int": false,
+    "wis": false,
+    "cha": false
+  },
+  "skills": {
+    "acro": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "dex"
+    },
+    "anim": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "wis"
+    },
+    "arca": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "int"
+    },
+    "athl": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "str"
+    },
+    "dece": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "cha"
+    },
+    "hist": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "int"
+    },
+    "insi": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "wis"
+    },
+    "inti": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "cha"
+    },
+    "inve": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "int"
+    },
+    "medi": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "wis"
+    },
+    "natu": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "int"
+    },
+    "perc": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "wis"
+    },
+    "perf": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "cha"
+    },
+    "pers": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "cha"
+    },
+    "reli": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "int"
+    },
+    "slei": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "dex"
+    },
+    "stea": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "dex"
+    },
+    "surv": {
+      "proficiency": false,
+      "expertise": false,
+      "stat": "wis"
+    }
+  },
+  "playerHealth": {
+    "mHP": 20,
+    "cHP": 20,
+    "tHP": 20
+  }
+}
