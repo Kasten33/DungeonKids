@@ -14,11 +14,11 @@ const CharaSheet = () => {
   const generateAttributes = () => {
     return stats.map((stat) => (
       <tr key={stat}>
-        <td>{stat}</td>
-        <td>
+        <td className={styles.td}>{stat}</td>
+        <td className={styles.td}>
           <input type="number" className={styles.statInput} /> 
         </td>
-        <td>0</td>
+        <td className={styles.td}>0</td>
       </tr>
     ));
   };
@@ -26,8 +26,8 @@ const CharaSheet = () => {
   const generateCharaInfo = () => {
     return chara.map((chara) => (
       <tr key={chara}>
-        <td colSpan="1">{chara}</td>
-        <td colSpan="4">
+        <td colSpan="1" className={styles.td}>{chara}</td>
+        <td colSpan="4" className={styles.td}>
           <select className={styles.chDrop}>
             <option>Cleric</option>
             <option>Fighter</option>
@@ -46,15 +46,15 @@ const CharaSheet = () => {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th colSpan="6">Character Info</th>
+                <th colSpan="6" className={styles.th}>Character Info</th>
               </tr>
               <tr>
-                <th>Level</th>
-                <th>
+                <th className={styles.th}>Level</th>
+                <th className={styles.th}>
                   <input type="number" className={styles.statInput} />
                 </th>
-                <th>PB: num</th>
-                <th>INSP: YES</th>
+                <th className={styles.th}>PB: num</th>
+                <th className={styles.th}>INSP: YES</th>
               </tr>
             </thead>
             <tbody id="chara-info">{generateCharaInfo()}</tbody>
@@ -64,9 +64,9 @@ const CharaSheet = () => {
           <table className={styles.table}>
             <thead>
             <tr>
-              <th>Stat</th>
-              <th>Value</th>
-              <th>Modifier</th>
+              <th className={styles.th}>Stat</th>
+              <th className={styles.th}>Value</th>
+              <th className={styles.th}>Modifier</th>
             </tr>
             </thead>
             <tbody id="stats-table">{generateAttributes()}</tbody>
