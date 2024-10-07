@@ -43,7 +43,7 @@ const CharaSheet = () => {
       <p className={styles.header}>Character Sheet</p>
       <div className={styles.container}>
         <div className={styles.box}>
-          <table>
+          <table className={styles.table}>
             <thead>
               <tr>
                 <th colSpan="6">Character Info</th>
@@ -61,7 +61,7 @@ const CharaSheet = () => {
           </table>
         </div>
         <div className={styles.box}>
-          <table>
+          <table className={styles.table}>
             <thead>
             <tr>
               <th>Stat</th>
