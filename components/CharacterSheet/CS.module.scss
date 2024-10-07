@@ -1,1 +1,47 @@
-//use . before any class name to use it in the component EX: .body or .background otherwise it will not work
+.header {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .box {
+    border: 1px solid black;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 100%;
+  }
+  
+  .th,
+  .td {
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .statInput {
+    width: 20px;
+    padding: 3px;
+  }
+  
+  .input[type="number"]::-webkit-outer-spin-button,
+  .input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .chDrop {
+    width: 100%;
+  }
